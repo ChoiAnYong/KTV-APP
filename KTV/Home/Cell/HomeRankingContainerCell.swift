@@ -17,6 +17,7 @@ class HomeRankingContainerCell: UITableViewCell {
     static let height: CGFloat = 349
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: HomeRankingContainerCellDelegate?
+    private var rankings: [Home.Ranking]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,12 +36,17 @@ class HomeRankingContainerCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setData(_ data: [Home.Ranking]) {
+        self.rankings = data//Ranking 데이터를 받아옴
+        self.collectionView.reloadData()//셀을 새로 로드
+    }
+    
 }
 
 extension HomeRankingContainerCell: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        self.rankings?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -49,8 +55,9 @@ extension HomeRankingContainerCell: UICollectionViewDataSource, UICollectionView
             for: indexPath
         )
         
-        if let cell = cell as? HomeRankingItemCell {
-            cell.setRank(indexPath.item + 1)
+        if let cell = cell as? HomeRankingItemCell,
+            let data = self.rankings?[indexPath.item] {
+                cell.setData(data, rank: indexPath.item + 1)
         }
         return cell
     }

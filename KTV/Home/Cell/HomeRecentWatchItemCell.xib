@@ -38,9 +38,11 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="O33-pO-DFD" secondAttribute="trailing" id="0uo-l0-bWj"/>
+                                    <constraint firstItem="Exq-Lv-dfI" firstAttribute="centerX" secondItem="pwz-lb-gJR" secondAttribute="centerX" id="LK8-CL-nJM"/>
                                     <constraint firstItem="O33-pO-DFD" firstAttribute="top" secondItem="pwz-lb-gJR" secondAttribute="top" id="RqI-Kp-4gA"/>
                                     <constraint firstAttribute="bottom" secondItem="O33-pO-DFD" secondAttribute="bottom" id="WeW-JO-Vmq"/>
                                     <constraint firstItem="O33-pO-DFD" firstAttribute="leading" secondItem="pwz-lb-gJR" secondAttribute="leading" id="YdY-dx-sfK"/>
+                                    <constraint firstItem="Exq-Lv-dfI" firstAttribute="centerY" secondItem="pwz-lb-gJR" secondAttribute="centerY" id="gBD-fJ-KHJ"/>
                                     <constraint firstAttribute="width" constant="84" id="i1f-vx-8J6"/>
                                     <constraint firstAttribute="height" constant="84" id="zoH-Ng-IcY"/>
                                 </constraints>
@@ -57,7 +59,7 @@
                                 <color key="textColor" name="main-wh"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2p-xa-weq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2p-xa-weq" customClass="HomeRe">
                                 <rect key="frame" x="0.0" y="136" width="84" height="10"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <color key="textColor" name="text-gray"/>
@@ -72,9 +74,7 @@
                             <constraint firstItem="pwz-lb-gJR" firstAttribute="leading" secondItem="myd-sP-4r4" secondAttribute="leading" id="Adi-q0-SZd"/>
                             <constraint firstAttribute="trailing" secondItem="gOC-Ki-lGL" secondAttribute="trailing" id="HBe-Nm-0i0"/>
                             <constraint firstAttribute="trailing" secondItem="pwz-lb-gJR" secondAttribute="trailing" id="KgB-bz-dmJ"/>
-                            <constraint firstItem="Exq-Lv-dfI" firstAttribute="centerX" secondItem="pwz-lb-gJR" secondAttribute="centerX" id="LK8-CL-nJM"/>
                             <constraint firstItem="gOC-Ki-lGL" firstAttribute="top" secondItem="4M7-We-a4E" secondAttribute="bottom" constant="3" id="Vnf-7Y-qXl"/>
-                            <constraint firstItem="Exq-Lv-dfI" firstAttribute="centerY" secondItem="pwz-lb-gJR" secondAttribute="centerY" id="gBD-fJ-KHJ"/>
                             <constraint firstItem="4M7-We-a4E" firstAttribute="leading" secondItem="myd-sP-4r4" secondAttribute="leading" id="ku3-nN-Wf3"/>
                             <constraint firstItem="gOC-Ki-lGL" firstAttribute="leading" secondItem="myd-sP-4r4" secondAttribute="leading" id="nzL-Aa-opf"/>
                             <constraint firstItem="pwz-lb-gJR" firstAttribute="top" secondItem="myd-sP-4r4" secondAttribute="top" id="taO-5F-Bux"/>

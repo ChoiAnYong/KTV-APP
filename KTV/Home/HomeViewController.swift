@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         self.setupTableView()
+        self.bindViewModel()
+        self.homeViewModel.requestData()
     }
     
     private func setupTableView() {
@@ -49,6 +51,14 @@ class HomeViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
+    
+    private func bindViewModel() {
+        self.homeViewModel.dataChanged = { [weak self] in
+            // MARK: - network 연동
+            self?.tableView.isHidden = false
+            self?.tableView.reloadData()
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -64,7 +74,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .header:
             return 1
         case .video:
-            return 2
+            return self.homeViewModel.home?.videos.count ?? 0
         case .ranking:
             // MARK: - Ranking 추가.
             return 1
@@ -94,7 +104,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             // MARK: - Recent Watch 추가
             return HomeRecentWatchContainerCell.height
         case .recommend:
-            return HomeRecommendContainerCell.height
+            return HomeRecommendContainerCell.height(viewModel: self.homeViewModel.recommendViewModel)
         case .footer:
             return HomeFooterCell.height
         }
@@ -157,6 +167,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: HomeRecommendContainerCellDelegate {
     func homeRecommendContainerCell(_ cell: HomeRecommendContainerCell, didSelectItemAt index: Int) {
         print("home recommend cell did select item at \(index)")
+    }
+    
+    func homeRecommendCotainerCellFoldChanged(_ cell: HomeRecommendContainerCell) {
+        self.tableView.reloadData()
     }
 }
 
