@@ -7,11 +7,11 @@
 
 import UIKit
 
-class HomeVideoCell: UITableViewCell {
+class HomeVideoCell: UICollectionViewCell {
     
     static let height: CGFloat = 320
     static let identifier: String = "HomeVideoCell"
-    
+
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -22,13 +22,16 @@ class HomeVideoCell: UITableViewCell {
     @IBOutlet weak var hotImageView: UIImageView!
     private var thumbnailTask: Task<Void, Never>?
     private var channelThumbnailTask: Task<Void, Never>?
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.containerView.layer.cornerRadius = 10
         self.containerView.layer.borderWidth = 1
         self.containerView.layer.borderColor = UIColor(named: "stroke-light")?.cgColor
+        
+        self.containerView.layer.cornerRadius = 10
+        self.containerView.layer.borderWidth = 1
     }
     
     override func prepareForReuse() {
@@ -45,13 +48,6 @@ class HomeVideoCell: UITableViewCell {
         self.channelTitleLabel.text = nil
         self.channelImageView.image = nil
         self.channelSubtitleLabel.text = nil
-        
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     func setData(_ data: Home.Video) {
@@ -62,6 +58,6 @@ class HomeVideoCell: UITableViewCell {
         self.hotImageView.isHidden = !data.isHot
         self.thumbnailTask = self.thumbnailImageView.loadImage(url: data.imageUrl)
         self.channelThumbnailTask = self.channelImageView.loadImage(url: data.channelThumbnailURL)
-        
     }
+
 }

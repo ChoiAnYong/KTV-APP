@@ -2,24 +2,24 @@
 //  HomeRecentWatchContainerCell.swift
 //  KTV
 //
-//  Created by 최안용 on 11/16/23.
+//  Created by Lecture on 2023/09/09.
 //
 
 import UIKit
 
 protocol HomeRecentWatchContainerCellDelegate: AnyObject {
+    
     func homeRecentWatchContainerCell(_ cell: HomeRecentWatchContainerCell, didSelectItemAt index: Int)
 }
 
-class HomeRecentWatchContainerCell: UITableViewCell {
-    
+class HomeRecentWatchContainerCell: UICollectionViewCell {
+
     static let identifier: String = "HomeRecentWatchContainerCell"
-    static let height: CGFloat = 209
+    static let height: CGFloat = 189
     
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: HomeRecentWatchContainerCellDelegate?
     private var recents: [Home.Recent]?
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -33,12 +33,6 @@ class HomeRecentWatchContainerCell: UITableViewCell {
         )
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func setData(_ data: [Home.Recent]) {
@@ -62,6 +56,7 @@ extension HomeRecentWatchContainerCell: UICollectionViewDelegate, UICollectionVi
            let data = self.recents?[indexPath.item] {
             cell.setData(data)
         }
+        
         return cell
     }
     

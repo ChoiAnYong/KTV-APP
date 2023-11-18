@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeRecentWatchContainerCell" customModule="KTV" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="360" height="189"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xCO-kO-Fez" customClass="HomeRecentWatchContainerCell" customModule="KTV" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="278" height="189"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="360" height="189"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wWt-GA-Y2z">
+                <rect key="frame" x="0.0" y="0.0" width="278" height="189"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADV-tS-uyc">
-                        <rect key="frame" x="0.0" y="0.0" width="360" height="169"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFE-cE-MrK">
+                        <rect key="frame" x="0.0" y="0.0" width="278" height="189"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="M1Y-Kp-XZE">
-                                <rect key="frame" x="21" y="0.0" width="318" height="169"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0lZ-95-wNQ">
+                                <rect key="frame" x="0.0" y="0.0" width="278" height="189"/>
                                 <color key="backgroundColor" name="bk-origin"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vhy-Ft-r5u">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KNc-TV-A76">
                                     <size key="itemSize" width="84" height="148"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -34,27 +34,25 @@
                         </subviews>
                         <color key="backgroundColor" name="bg"/>
                         <constraints>
-                            <constraint firstItem="M1Y-Kp-XZE" firstAttribute="top" secondItem="ADV-tS-uyc" secondAttribute="top" id="58x-hM-BaN"/>
-                            <constraint firstItem="M1Y-Kp-XZE" firstAttribute="leading" secondItem="ADV-tS-uyc" secondAttribute="leading" constant="21" id="9b2-hr-D8B"/>
-                            <constraint firstAttribute="trailing" secondItem="M1Y-Kp-XZE" secondAttribute="trailing" constant="21" id="hMI-ab-lN3"/>
-                            <constraint firstAttribute="bottom" secondItem="M1Y-Kp-XZE" secondAttribute="bottom" id="uyX-2C-8ch"/>
+                            <constraint firstAttribute="bottom" secondItem="0lZ-95-wNQ" secondAttribute="bottom" id="JEO-eR-F1A"/>
+                            <constraint firstItem="0lZ-95-wNQ" firstAttribute="leading" secondItem="gFE-cE-MrK" secondAttribute="leading" id="Vx9-Uy-ELq"/>
+                            <constraint firstItem="0lZ-95-wNQ" firstAttribute="top" secondItem="gFE-cE-MrK" secondAttribute="top" id="exu-be-ewv"/>
+                            <constraint firstAttribute="trailing" secondItem="0lZ-95-wNQ" secondAttribute="trailing" id="vLK-oT-cmW"/>
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="bg"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="ADV-tS-uyc" secondAttribute="trailing" id="C3M-US-utj"/>
-                    <constraint firstItem="ADV-tS-uyc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PlH-C4-BB9"/>
-                    <constraint firstItem="ADV-tS-uyc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VgP-Kl-fgc"/>
-                    <constraint firstAttribute="bottom" secondItem="ADV-tS-uyc" secondAttribute="bottom" constant="20" id="bTA-AJ-sna"/>
+                    <constraint firstAttribute="bottom" secondItem="gFE-cE-MrK" secondAttribute="bottom" id="4Kd-Wh-sa8"/>
+                    <constraint firstItem="gFE-cE-MrK" firstAttribute="leading" secondItem="wWt-GA-Y2z" secondAttribute="leading" id="REq-G2-fdM"/>
+                    <constraint firstItem="gFE-cE-MrK" firstAttribute="top" secondItem="wWt-GA-Y2z" secondAttribute="top" id="SNk-nA-14x"/>
+                    <constraint firstAttribute="trailing" secondItem="gFE-cE-MrK" secondAttribute="trailing" id="mkY-Vw-0fF"/>
                 </constraints>
-            </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            </collectionViewCellContentView>
             <connections>
-                <outlet property="collectionView" destination="M1Y-Kp-XZE" id="4gT-0X-eTR"/>
+                <outlet property="collectionView" destination="0lZ-95-wNQ" id="fbU-n1-oBu"/>
             </connections>
-            <point key="canvasLocation" x="-5" y="-12"/>
-        </tableViewCell>
+            <point key="canvasLocation" x="625" y="10"/>
+        </collectionViewCell>
     </objects>
     <resources>
         <namedColor name="bg">

@@ -1,8 +1,8 @@
 //
-//  HomeRecentWatchItemCell.swift
+//  HomeWatchItemCell.swift
 //  KTV
 //
-//  Created by 최안용 on 11/16/23.
+//  Created by Lecture on 2023/09/03.
 //
 
 import UIKit
@@ -10,7 +10,8 @@ import UIKit
 class HomeRecentWatchItemCell: UICollectionViewCell {
     
     static let identifier: String = "HomeRecentWatchItemCell"
-    
+  //  static let itemSize: CGSize = .init(width: 84, height: 148)
+
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -43,19 +44,12 @@ class HomeRecentWatchItemCell: UICollectionViewCell {
     }
     
     func setData(_ data: Home.Recent) {
-        self.imageTask = Task {
-            guard
-                let responseData = try? await URLSession.shared.data(for: .init(url: data.imageUrl)).0
-            else {
-                return
-            }
-            
-            self.thumbnailImageView.image = UIImage(data: responseData)
-        }
         self.titleLabel.text = data.title
         self.subtitleLabel.text = data.channel
         self.dateLabel.text = Self.dateFormatter.string(
             from: .init(timeIntervalSince1970: data.timeStamp)
         )
+        self.imageTask = self.thumbnailImageView.loadImage(url: data.imageUrl)
     }
+
 }

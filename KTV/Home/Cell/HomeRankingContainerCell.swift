@@ -2,21 +2,21 @@
 //  HomeRankingContainerCell.swift
 //  KTV
 //
-//  Created by 최안용 on 11/16/23.
+//  Created by Lecture on 2023/09/09.
 //
 
 import UIKit
 
-protocol HomeRankingContainerCellDelegate: AnyObject {
+protocol HomeRankingContainerCellDeleate: AnyObject {
     func homeRankingContainerCell(_ cell: HomeRankingContainerCell, didSelectItemAt index: Int)
 }
 
-class HomeRankingContainerCell: UITableViewCell {
-    
+class HomeRankingContainerCell: UICollectionViewCell {
+
     static let identifier: String = "HomeRankingContainerCell"
-    static let height: CGFloat = 349
+    static let height: CGFloat = 265
     @IBOutlet weak var collectionView: UICollectionView!
-    weak var delegate: HomeRankingContainerCellDelegate?
+    weak var delegate: HomeRankingContainerCellDeleate?
     private var rankings: [Home.Ranking]?
     
     override func awakeFromNib() {
@@ -29,18 +29,11 @@ class HomeRankingContainerCell: UITableViewCell {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func setData(_ data: [Home.Ranking]) {
-        self.rankings = data//Ranking 데이터를 받아옴
-        self.collectionView.reloadData()//셀을 새로 로드
+        self.rankings = data
+        self.collectionView.reloadData()
     }
-    
 }
 
 extension HomeRankingContainerCell: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -56,9 +49,10 @@ extension HomeRankingContainerCell: UICollectionViewDataSource, UICollectionView
         )
         
         if let cell = cell as? HomeRankingItemCell,
-            let data = self.rankings?[indexPath.item] {
-                cell.setData(data, rank: indexPath.item + 1)
+           let data = self.rankings?[indexPath.item] {
+            cell.setData(data, rank: indexPath.item + 1)
         }
+        
         return cell
     }
     

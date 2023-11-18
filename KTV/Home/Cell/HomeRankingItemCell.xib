@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,18 +18,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="130" height="239"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QsT-mT-Uvb">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oo-ce-0Q5">
                         <rect key="frame" x="0.0" y="0.0" width="130" height="239"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nes-9d-zvL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUQ-BP-xV1">
                                 <rect key="frame" x="0.0" y="0.0" width="130" height="239"/>
+                                <color key="backgroundColor" name="gray-1"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PT-q4-vCe">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiC-Dt-QaK">
                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                 <color key="backgroundColor" name="bk-origin"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="A6E-E7-1BS"/>
-                                    <constraint firstAttribute="width" constant="32" id="csK-hf-oKd"/>
+                                    <constraint firstAttribute="width" constant="32" id="215-aD-QlX"/>
+                                    <constraint firstAttribute="height" constant="32" id="U7E-Dl-20I"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="main-wh"/>
@@ -38,32 +39,36 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="9PT-q4-vCe" firstAttribute="leading" secondItem="QsT-mT-Uvb" secondAttribute="leading" id="3dJ-4E-cSg"/>
-                            <constraint firstItem="Nes-9d-zvL" firstAttribute="leading" secondItem="QsT-mT-Uvb" secondAttribute="leading" id="IwE-rz-aol"/>
-                            <constraint firstAttribute="trailing" secondItem="Nes-9d-zvL" secondAttribute="trailing" id="QD3-zv-VKM"/>
-                            <constraint firstItem="9PT-q4-vCe" firstAttribute="top" secondItem="QsT-mT-Uvb" secondAttribute="top" id="kNH-t7-xYp"/>
-                            <constraint firstItem="Nes-9d-zvL" firstAttribute="top" secondItem="QsT-mT-Uvb" secondAttribute="top" id="pCa-Rk-4hX"/>
-                            <constraint firstAttribute="bottom" secondItem="Nes-9d-zvL" secondAttribute="bottom" id="vE8-Hl-r8k"/>
+                            <constraint firstAttribute="trailing" secondItem="cUQ-BP-xV1" secondAttribute="trailing" id="24h-m2-MM9"/>
+                            <constraint firstAttribute="bottom" secondItem="cUQ-BP-xV1" secondAttribute="bottom" id="8nS-BJ-hT9"/>
+                            <constraint firstItem="cUQ-BP-xV1" firstAttribute="leading" secondItem="6oo-ce-0Q5" secondAttribute="leading" id="NMt-Ob-IQ6"/>
+                            <constraint firstItem="uiC-Dt-QaK" firstAttribute="top" secondItem="6oo-ce-0Q5" secondAttribute="top" id="Ofu-BK-tWA"/>
+                            <constraint firstItem="uiC-Dt-QaK" firstAttribute="leading" secondItem="6oo-ce-0Q5" secondAttribute="leading" id="jvX-AY-3aw"/>
+                            <constraint firstItem="cUQ-BP-xV1" firstAttribute="top" secondItem="6oo-ce-0Q5" secondAttribute="top" id="yc8-td-pkS"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="QsT-mT-Uvb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1XF-Xx-UBh"/>
-                <constraint firstAttribute="trailing" secondItem="QsT-mT-Uvb" secondAttribute="trailing" id="ANf-JQ-9mg"/>
-                <constraint firstAttribute="bottom" secondItem="QsT-mT-Uvb" secondAttribute="bottom" id="Os5-ya-2NV"/>
-                <constraint firstItem="QsT-mT-Uvb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XVA-ag-3h8"/>
+                <constraint firstItem="6oo-ce-0Q5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XI6-YQ-kSs"/>
+                <constraint firstItem="6oo-ce-0Q5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="deG-xM-gch"/>
+                <constraint firstAttribute="trailing" secondItem="6oo-ce-0Q5" secondAttribute="trailing" id="nAm-RX-VFH"/>
+                <constraint firstAttribute="bottom" secondItem="6oo-ce-0Q5" secondAttribute="bottom" id="pyw-nU-eSZ"/>
             </constraints>
             <connections>
-                <outlet property="numberLabel" destination="9PT-q4-vCe" id="vvc-j7-Lzs"/>
-                <outlet property="thumbnailImageView" destination="Nes-9d-zvL" id="aVh-Yq-cSx"/>
+                <outlet property="numberLabel" destination="uiC-Dt-QaK" id="jNv-Ps-UQ8"/>
+                <outlet property="thumbnailImageView" destination="cUQ-BP-xV1" id="igc-7k-B7Z"/>
             </connections>
-            <point key="canvasLocation" x="73" y="-12"/>
+            <point key="canvasLocation" x="138.93129770992365" y="19.366197183098592"/>
         </collectionViewCell>
     </objects>
     <resources>
         <namedColor name="bk-origin">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray-1">
+            <color red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="main-wh">
             <color red="0.99607843137254903" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
