@@ -16,6 +16,7 @@
                 <outlet property="favoriteButton" destination="ipu-P8-IuG" id="2Yv-mK-yqp"/>
                 <outlet property="playButton" destination="uh0-lB-96r" id="V4Y-La-hUV"/>
                 <outlet property="playCountLabel" destination="3vW-Wb-rfV" id="xSG-Aj-dZ9"/>
+                <outlet property="portraitControlPannel" destination="pjg-1d-tvB" id="b5M-a6-QVu"/>
                 <outlet property="recommendTableView" destination="dMK-LE-bAe" id="Q9E-CD-cc8"/>
                 <outlet property="tableViewHeightConstraint" destination="nEF-bT-nbB" id="X67-FM-hx0"/>
                 <outlet property="titleLabel" destination="IR1-L6-Pro" id="lr5-fF-ez6"/>
@@ -35,7 +36,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="221"/>
                             <color key="backgroundColor" name="d-text-deep"/>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjg-1d-tvB">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjg-1d-tvB">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="221"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhK-bE-12K">

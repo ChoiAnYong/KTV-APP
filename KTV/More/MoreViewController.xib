@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoreViewController" customModule="KTV" customModuleProvider="target">
             <connections>
+                <outlet property="headerView" destination="WuT-u2-PaY" id="QFf-58-qrb"/>
+                <outlet property="tableView" destination="pt8-dT-tYu" id="07Z-Pc-Cg0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pt8-dT-tYu">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pt8-dT-tYu">
                     <rect key="frame" x="0.0" y="619" width="393" height="233"/>
                     <color key="backgroundColor" name="bg"/>
                     <constraints>
@@ -43,6 +45,9 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="small_close"/>
+                            <connections>
+                                <action selector="closeDidTap:" destination="-1" eventType="touchUpInside" id="Crf-XT-1JN"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" name="bg"/>
