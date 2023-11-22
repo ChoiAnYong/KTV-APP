@@ -71,6 +71,7 @@
 		ADCA914E2B0A4896007CB49F /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA914D2B0A4896007CB49F /* MoreTableViewCell.swift */; };
 		ADCA91522B0A4D61007CB49F /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA91512B0A4D61007CB49F /* Video.swift */; };
 		ADCA91542B0A4DA5007CB49F /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA91532B0A4DA5007CB49F /* VideoViewModel.swift */; };
+		ADE660702B0E030C005083B5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6606F2B0E030C005083B5 /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,7 @@
 		ADCA914D2B0A4896007CB49F /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		ADCA91512B0A4D61007CB49F /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		ADCA91532B0A4DA5007CB49F /* VideoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
+		ADE6606F2B0E030C005083B5 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +374,7 @@
 				ADCA85572B0A059A0093A410 /* VideoViewController.swift */,
 				ADCA85582B0A059A0093A410 /* VideoViewController.xib */,
 				ADCA91532B0A4DA5007CB49F /* VideoViewModel.swift */,
+				ADE6606F2B0E030C005083B5 /* PlayerView.swift */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				AD20D4802B0760B4000CADFB /* UIImageView+Task.swift in Sources */,
 				95E70C982AA8B93B007BAD7B /* SceneDelegate.swift in Sources */,
 				68CA31422AAA357800A744AF /* HomeViewModel.swift in Sources */,
+				ADE660702B0E030C005083B5 /* PlayerView.swift in Sources */,
 				AD20D49E2B07C34D000CADFB /* HomeVideoCell.swift in Sources */,
 				ADC3B8BF2B08D4450076B8D3 /* BookmarkViewModel.swift in Sources */,
 				ADC3B8BB2B08CF9E0076B8D3 /* MyViewController.swift in Sources */,
