@@ -47,6 +47,8 @@
 		AD20D4AF2B07C34D000CADFB /* HomeRankingContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD20D49B2B07C34C000CADFB /* HomeRankingContainerCell.swift */; };
 		AD20D4B02B07C34D000CADFB /* HomeRecommendContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD20D49C2B07C34C000CADFB /* HomeRecommendContainerCell.swift */; };
 		AD20D4B12B07C34D000CADFB /* HomeFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD20D49D2B07C34C000CADFB /* HomeFooterView.xib */; };
+		AD238F092B0F8B7800F2C48B /* SeekbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F082B0F8B7800F2C48B /* SeekbarView.swift */; };
+		AD238F0C2B0F946400F2C48B /* DateComponentsFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F0B2B0F946400F2C48B /* DateComponentsFormatterExtension.swift */; };
 		ADC3B8B22B08A09F0076B8D3 /* live.json in Resources */ = {isa = PBXBuildFile; fileRef = ADC3B8AD2B08A09F0076B8D3 /* live.json */; };
 		ADC3B8B32B08A09F0076B8D3 /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = ADC3B8AE2B08A09F0076B8D3 /* video.json */; };
 		ADC3B8B42B08A09F0076B8D3 /* favorite.json in Resources */ = {isa = PBXBuildFile; fileRef = ADC3B8AF2B08A09F0076B8D3 /* favorite.json */; };
@@ -136,6 +138,8 @@
 		AD20D49B2B07C34C000CADFB /* HomeRankingContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRankingContainerCell.swift; sourceTree = "<group>"; };
 		AD20D49C2B07C34C000CADFB /* HomeRecommendContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRecommendContainerCell.swift; sourceTree = "<group>"; };
 		AD20D49D2B07C34C000CADFB /* HomeFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeFooterView.xib; sourceTree = "<group>"; };
+		AD238F082B0F8B7800F2C48B /* SeekbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekbarView.swift; sourceTree = "<group>"; };
+		AD238F0B2B0F946400F2C48B /* DateComponentsFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateComponentsFormatterExtension.swift; sourceTree = "<group>"; };
 		ADC3B8AD2B08A09F0076B8D3 /* live.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = live.json; sourceTree = "<group>"; };
 		ADC3B8AE2B08A09F0076B8D3 /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
 		ADC3B8AF2B08A09F0076B8D3 /* favorite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favorite.json; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 		95E70C942AA8B93B007BAD7B /* KTV */ = {
 			isa = PBXGroup;
 			children = (
+				AD238F0A2B0F942F00F2C48B /* Extensions */,
 				ADCA855B2B0A26B00093A410 /* More */,
 				ADCA85562B0A056C0093A410 /* Video */,
 				684920CD2AB1FD8C00E5202E /* TabBarController.swift */,
@@ -326,6 +331,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		AD238F0A2B0F942F00F2C48B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AD238F0B2B0F946400F2C48B /* DateComponentsFormatterExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		ADC3B8AC2B08A09F0076B8D3 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +388,7 @@
 				ADCA85582B0A059A0093A410 /* VideoViewController.xib */,
 				ADCA91532B0A4DA5007CB49F /* VideoViewModel.swift */,
 				ADE6606F2B0E030C005083B5 /* PlayerView.swift */,
+				AD238F082B0F8B7800F2C48B /* SeekbarView.swift */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -556,6 +570,7 @@
 				AD20D47E2B0760A1000CADFB /* DataLoader.swift in Sources */,
 				ADC3B8C22B08D4FB0076B8D3 /* BookmarkCell.swift in Sources */,
 				95E70C962AA8B93B007BAD7B /* AppDelegate.swift in Sources */,
+				AD238F0C2B0F946400F2C48B /* DateComponentsFormatterExtension.swift in Sources */,
 				AD20D4A32B07C34D000CADFB /* HomeRecentWatchContainerCell.swift in Sources */,
 				ADC3B8CD2B08DBBB0076B8D3 /* NavigationController.swift in Sources */,
 				AD20D4822B077640000CADFB /* VideoListItem.swift in Sources */,
@@ -570,6 +585,7 @@
 				AD20D4A72B07C34D000CADFB /* HomeFooterView.swift in Sources */,
 				ADCA91542B0A4DA5007CB49F /* VideoViewModel.swift in Sources */,
 				ADCA855E2B0A26CC0093A410 /* MoreViewController.swift in Sources */,
+				AD238F092B0F8B7800F2C48B /* SeekbarView.swift in Sources */,
 				AD20D4B02B07C34D000CADFB /* HomeRecommendContainerCell.swift in Sources */,
 				ADC3B8C52B08D7310076B8D3 /* Bookmark.swift in Sources */,
 				AD20D4802B0760B4000CADFB /* UIImageView+Task.swift in Sources */,

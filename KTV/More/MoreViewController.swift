@@ -36,7 +36,23 @@ class MoreViewController: UIViewController {
         )
         self.setupConerRadius()
     }
-
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        self.setupConerRadius()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        self.setupConerRadius()
+        coordinator.animate { _ in
+            self.setupConerRadius()
+        }
+        
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+    
     @IBAction func closeDidTap(_ sender: Any) {
         self.dismiss(animated: false)//modal로 띄운 뷰에 대한 닫기를 가능하게 함(animated를 true로 하면 창이 올라오는 모션이 나온다.
     }

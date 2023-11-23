@@ -23,8 +23,15 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var recommendTableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var portraitControlPannel: UIView!
+    @IBOutlet weak var landscapeControlPannel: UIView!
+    @IBOutlet weak var landscapePlayButton: UIButton!
+    @IBOutlet weak var landscapeTitleLabel: UILabel!
     
     @IBOutlet weak var playerView: PlayerView!
+    
+    @IBOutlet var playerViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var seekbar: SeekbarView!
+    @IBOutlet weak var landscapePlayTimeLabel: UILabel!
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MMdd"
@@ -36,7 +43,12 @@ class VideoViewController: UIViewController {
     private let viewModel = VideoViewModel()
     private var isControlPannelHidden: Bool = true {
         didSet {
-            self.portraitControlPannel.isHidden = self.isControlPannelHidden
+            
+            if self.isLandscape(size: self.view.frame.size) {
+                self.landscapeControlPannel.isHidden = self.isControlPannelHidden
+            } else {
+                self.portraitControlPannel.isHidden = self.isControlPannelHidden
+            }
         }
     }
     
@@ -57,10 +69,22 @@ class VideoViewController: UIViewController {
         super.viewDidLoad()
         
         self.playerView.delegate = self
+        self.seekbar.delegate = self
         self.channelThumbnailImageView.layer.cornerRadius = 14
         self.setupRecommendTableView()
         self.bindViewModel()
         self.viewModel.request()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        self.switchControlPannel(size: size)
+        self.playerViewBottomConstraint.isActive = self.isLandscape(size: size)
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+    
+    private func isLandscape(size: CGSize) -> Bool {
+        size.width > size.height
     }
     
     private func bindViewModel() {
@@ -73,6 +97,7 @@ class VideoViewController: UIViewController {
         self.playerView.set(url: video.videoURL)
         self.playerView.play()
         self.titleLabel.text = video.title
+        self.landscapeTitleLabel.text = video.title
         self.channelThumbnailImageView.loadImage(url: video.channelImageUrl)
         self.channelNameLabel.text = video.channel
         self.updateDateLabel.text = Self.dateFormatter.string(from: Date(timeIntervalSince1970: video.uploadTimestamp))
@@ -86,6 +111,16 @@ class VideoViewController: UIViewController {
 }
 
 extension VideoViewController {
+    
+    private func switchControlPannel(size: CGSize) {
+        guard self.isControlPannelHidden == false else {
+            return
+        }
+        
+        self.landscapeControlPannel.isHidden = !self.isLandscape(size: size)
+        self.portraitControlPannel.isHidden = self.isLandscape(size: size)
+    }
+    
     @IBAction func toggleControlPannel(_ sender: Any) {
         self.isControlPannelHidden.toggle()
     }
@@ -95,6 +130,11 @@ extension VideoViewController {
     }
     
     @IBAction func expandDidTap(_ sender: Any) {
+        self.rotateScene(landscape: true)
+    }
+    
+    @IBAction func shrinkDidTap(_ sender: Any) {
+        self.rotateScene(landscape: false)
     }
     
     @IBAction func moreDidTap(_ sender: UIButton) {
@@ -123,20 +163,56 @@ extension VideoViewController {
     private func updatePlayButton(isPlaying: Bool) {
         let playImage = isPlaying ? UIImage(named:  "small_pause") : UIImage(named: "small_play")
         self.playButton.setImage(playImage, for: .normal)
+        
+        let landscapePlayImage = isPlaying ? UIImage(named:  "big_pause") : UIImage(named: "big_play")
+        self.landscapePlayButton.setImage(landscapePlayImage, for: .normal)
+    }
+    
+    private func rotateScene(landscape: Bool) {
+        if #available(iOS 16.0, *) {
+            self.view.window?.windowScene?.requestGeometryUpdate(
+                .iOS(interfaceOrientations: landscape ? .landscapeRight : .portrait))
+        } else {
+            let orientation: UIInterfaceOrientation = landscape ? .landscapeRight : .portrait
+            UIDevice.current.setValue(orientation.rawValue, forKey: "orientation")
+            UIViewController.attemptRotationToDeviceOrientation()
+        }
     }
 }
 
 extension VideoViewController: PlayerViewDelegate {
     func playerViewReadyToPlay(_ playerView: PlayerView) {
+        self.seekbar.setTotalPlayTime(self.playerView.totalPlayTime)
         self.updatePlayButton(isPlaying: playerView.isPlaying)
+        self.updatePlayTime(0, totalPlayTime: playerView.totalPlayTime)
     }
     
     func playerView(_ playerView: PlayerView, didplay playTime: Double, playableTime: Double) {
+        self.seekbar.setPlayTime(playTime, playableTime: playableTime)
+        self.updatePlayTime(playTime, totalPlayTime: playerView.totalPlayTime)
     }
     
     func playerViewDidFinishToPlay(_ playerView: PlayerView) {
         self.playerView.seek(to: 0)
         self.updatePlayButton(isPlaying: false)
+    }
+    
+    private func updatePlayTime(_ playtime: Double, totalPlayTime: Double) {
+        guard 
+            let playTimeText = DateComponentsFormatter.playTimeFormatter.string(from: playtime),
+            let totalPlayTimeText = DateComponentsFormatter.playTimeFormatter.string(from: totalPlayTime)
+        else {
+            self.landscapePlayTimeLabel.text = nil
+            return
+        }
+        
+        self.landscapePlayTimeLabel.text = "\(playTimeText) / \(totalPlayTimeText)"
+    }
+}
+
+extension  VideoViewController: SeekbarViewDelegate {
+    func seekbar(_ seekbar: SeekbarView, seekToPercent percent: Double) {
+        self.playerView.seek(to: percent)
     }
 }
 
