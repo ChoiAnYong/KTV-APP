@@ -49,6 +49,18 @@
 		AD20D4B12B07C34D000CADFB /* HomeFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD20D49D2B07C34C000CADFB /* HomeFooterView.xib */; };
 		AD238F092B0F8B7800F2C48B /* SeekbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F082B0F8B7800F2C48B /* SeekbarView.swift */; };
 		AD238F0C2B0F946400F2C48B /* DateComponentsFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F0B2B0F946400F2C48B /* DateComponentsFormatterExtension.swift */; };
+		AD238F0F2B0FAE6500F2C48B /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F0E2B0FAE6500F2C48B /* LiveViewController.swift */; };
+		AD238F122B10570300F2C48B /* LiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F102B10570300F2C48B /* LiveCell.swift */; };
+		AD238F132B10570300F2C48B /* LiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD238F112B10570300F2C48B /* LiveCell.xib */; };
+		AD238F152B106A4600F2C48B /* Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F142B106A4600F2C48B /* Live.swift */; };
+		AD238F172B106ABA00F2C48B /* LiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F162B106ABA00F2C48B /* LiveViewModel.swift */; };
+		AD238F1A2B10795F00F2C48B /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F192B10795F00F2C48B /* ChattingView.swift */; };
+		AD238F1C2B1079E800F2C48B /* ChatSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F1B2B1079E800F2C48B /* ChatSimulator.swift */; };
+		AD238F1E2B107A0600F2C48B /* ChattingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F1D2B107A0600F2C48B /* ChattingViewModel.swift */; };
+		AD238F232B107A5A00F2C48B /* LiveChattingMessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD238F1F2B107A5A00F2C48B /* LiveChattingMessageCollectionViewCell.xib */; };
+		AD238F242B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD238F202B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.xib */; };
+		AD238F252B107A5A00F2C48B /* LiveChattingMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F212B107A5A00F2C48B /* LiveChattingMessageCollectionViewCell.swift */; };
+		AD238F262B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F222B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.swift */; };
 		ADC3B8B22B08A09F0076B8D3 /* live.json in Resources */ = {isa = PBXBuildFile; fileRef = ADC3B8AD2B08A09F0076B8D3 /* live.json */; };
 		ADC3B8B32B08A09F0076B8D3 /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = ADC3B8AE2B08A09F0076B8D3 /* video.json */; };
 		ADC3B8B42B08A09F0076B8D3 /* favorite.json in Resources */ = {isa = PBXBuildFile; fileRef = ADC3B8AF2B08A09F0076B8D3 /* favorite.json */; };
@@ -140,6 +152,18 @@
 		AD20D49D2B07C34C000CADFB /* HomeFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeFooterView.xib; sourceTree = "<group>"; };
 		AD238F082B0F8B7800F2C48B /* SeekbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekbarView.swift; sourceTree = "<group>"; };
 		AD238F0B2B0F946400F2C48B /* DateComponentsFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateComponentsFormatterExtension.swift; sourceTree = "<group>"; };
+		AD238F0E2B0FAE6500F2C48B /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		AD238F102B10570300F2C48B /* LiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCell.swift; sourceTree = "<group>"; };
+		AD238F112B10570300F2C48B /* LiveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveCell.xib; sourceTree = "<group>"; };
+		AD238F142B106A4600F2C48B /* Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live.swift; sourceTree = "<group>"; };
+		AD238F162B106ABA00F2C48B /* LiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewModel.swift; sourceTree = "<group>"; };
+		AD238F192B10795F00F2C48B /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
+		AD238F1B2B1079E800F2C48B /* ChatSimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatSimulator.swift; sourceTree = "<group>"; };
+		AD238F1D2B107A0600F2C48B /* ChattingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewModel.swift; sourceTree = "<group>"; };
+		AD238F1F2B107A5A00F2C48B /* LiveChattingMessageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveChattingMessageCollectionViewCell.xib; sourceTree = "<group>"; };
+		AD238F202B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveChattingMyMessageCollectionViewCell.xib; sourceTree = "<group>"; };
+		AD238F212B107A5A00F2C48B /* LiveChattingMessageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveChattingMessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		AD238F222B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveChattingMyMessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ADC3B8AD2B08A09F0076B8D3 /* live.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = live.json; sourceTree = "<group>"; };
 		ADC3B8AE2B08A09F0076B8D3 /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
 		ADC3B8AF2B08A09F0076B8D3 /* favorite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favorite.json; sourceTree = "<group>"; };
@@ -235,6 +259,8 @@
 		95E70C942AA8B93B007BAD7B /* KTV */ = {
 			isa = PBXGroup;
 			children = (
+				AD238F182B10792E00F2C48B /* LiveChatting */,
+				AD238F0D2B0FAE3F00F2C48B /* Live */,
 				AD238F0A2B0F942F00F2C48B /* Extensions */,
 				ADCA855B2B0A26B00093A410 /* More */,
 				ADCA85562B0A056C0093A410 /* Video */,
@@ -283,6 +309,7 @@
 				AD20D4812B077640000CADFB /* VideoListItem.swift */,
 				ADC3B8C42B08D7310076B8D3 /* Bookmark.swift */,
 				ADC3B8C62B08D7440076B8D3 /* Favorite.swift */,
+				AD238F142B106A4600F2C48B /* Live.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +364,31 @@
 				AD238F0B2B0F946400F2C48B /* DateComponentsFormatterExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AD238F0D2B0FAE3F00F2C48B /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				AD238F0E2B0FAE6500F2C48B /* LiveViewController.swift */,
+				AD238F102B10570300F2C48B /* LiveCell.swift */,
+				AD238F112B10570300F2C48B /* LiveCell.xib */,
+				AD238F162B106ABA00F2C48B /* LiveViewModel.swift */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		AD238F182B10792E00F2C48B /* LiveChatting */ = {
+			isa = PBXGroup;
+			children = (
+				AD238F1B2B1079E800F2C48B /* ChatSimulator.swift */,
+				AD238F192B10795F00F2C48B /* ChattingView.swift */,
+				AD238F1D2B107A0600F2C48B /* ChattingViewModel.swift */,
+				AD238F212B107A5A00F2C48B /* LiveChattingMessageCollectionViewCell.swift */,
+				AD238F1F2B107A5A00F2C48B /* LiveChattingMessageCollectionViewCell.xib */,
+				AD238F222B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.swift */,
+				AD238F202B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.xib */,
+			);
+			path = LiveChatting;
 			sourceTree = "<group>";
 		};
 		ADC3B8AC2B08A09F0076B8D3 /* JSON */ = {
@@ -515,6 +567,7 @@
 				AD20D4A42B07C34D000CADFB /* HomeRankingItemCell.xib in Resources */,
 				AD20D4A02B07C34D000CADFB /* HomeRecommendContainerCell.xib in Resources */,
 				ADCA914C2B0A4869007CB49F /* MoreTableViewCell.xib in Resources */,
+				AD238F242B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.xib in Resources */,
 				AD20D4AA2B07C34D000CADFB /* HomeRecentWatchItemCell.xib in Resources */,
 				AD20D4A12B07C34D000CADFB /* HomeHeaderView.xib in Resources */,
 				AD20D4AB2B07C34D000CADFB /* HomeVideoCell.xib in Resources */,
@@ -522,6 +575,8 @@
 				ADCA855A2B0A059A0093A410 /* VideoViewController.xib in Resources */,
 				ADC3B8B22B08A09F0076B8D3 /* live.json in Resources */,
 				ADC3B8B32B08A09F0076B8D3 /* video.json in Resources */,
+				AD238F132B10570300F2C48B /* LiveCell.xib in Resources */,
+				AD238F232B107A5A00F2C48B /* LiveChattingMessageCollectionViewCell.xib in Resources */,
 				ADC3B8B52B08A09F0076B8D3 /* home.json in Resources */,
 				ADC3B8C32B08D4FB0076B8D3 /* BookmarkCell.xib in Resources */,
 				68CA313C2AAA292900A744AF /* Color.xcassets in Resources */,
@@ -556,7 +611,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD238F1E2B107A0600F2C48B /* ChattingViewModel.swift in Sources */,
 				AD20D4AD2B07C34D000CADFB /* VideoListItemCell.swift in Sources */,
+				AD238F1C2B1079E800F2C48B /* ChatSimulator.swift in Sources */,
 				AD20D4A92B07C34D000CADFB /* HomeRankingHeaderView.swift in Sources */,
 				ADCA91522B0A4D61007CB49F /* Video.swift in Sources */,
 				AD20D47B2B076044000CADFB /* URLDefines.swift in Sources */,
@@ -572,14 +629,18 @@
 				95E70C962AA8B93B007BAD7B /* AppDelegate.swift in Sources */,
 				AD238F0C2B0F946400F2C48B /* DateComponentsFormatterExtension.swift in Sources */,
 				AD20D4A32B07C34D000CADFB /* HomeRecentWatchContainerCell.swift in Sources */,
+				AD238F0F2B0FAE6500F2C48B /* LiveViewController.swift in Sources */,
 				ADC3B8CD2B08DBBB0076B8D3 /* NavigationController.swift in Sources */,
 				AD20D4822B077640000CADFB /* VideoListItem.swift in Sources */,
 				ADCA914E2B0A4896007CB49F /* MoreTableViewCell.swift in Sources */,
+				AD238F252B107A5A00F2C48B /* LiveChattingMessageCollectionViewCell.swift in Sources */,
 				6885F4682AAA3B9F00226D1E /* HomeSection.swift in Sources */,
 				ADCA85592B0A059A0093A410 /* VideoViewController.swift in Sources */,
 				ADCA914A2B0A472A007CB49F /* MoreViewModel.swift in Sources */,
 				AD20D46D2B073C51000CADFB /* Home.swift in Sources */,
 				AD20D4AE2B07C34D000CADFB /* HomeHeaderView.swift in Sources */,
+				AD238F262B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.swift in Sources */,
+				AD238F152B106A4600F2C48B /* Live.swift in Sources */,
 				AD20D4842B07AAE5000CADFB /* HomeRecommendViewModel.swift in Sources */,
 				AD20D49F2B07C34D000CADFB /* HomeRecentWatchItemCell.swift in Sources */,
 				AD20D4A72B07C34D000CADFB /* HomeFooterView.swift in Sources */,
@@ -588,13 +649,16 @@
 				AD238F092B0F8B7800F2C48B /* SeekbarView.swift in Sources */,
 				AD20D4B02B07C34D000CADFB /* HomeRecommendContainerCell.swift in Sources */,
 				ADC3B8C52B08D7310076B8D3 /* Bookmark.swift in Sources */,
+				AD238F1A2B10795F00F2C48B /* ChattingView.swift in Sources */,
 				AD20D4802B0760B4000CADFB /* UIImageView+Task.swift in Sources */,
+				AD238F122B10570300F2C48B /* LiveCell.swift in Sources */,
 				95E70C982AA8B93B007BAD7B /* SceneDelegate.swift in Sources */,
 				68CA31422AAA357800A744AF /* HomeViewModel.swift in Sources */,
 				ADE660702B0E030C005083B5 /* PlayerView.swift in Sources */,
 				AD20D49E2B07C34D000CADFB /* HomeVideoCell.swift in Sources */,
 				ADC3B8BF2B08D4450076B8D3 /* BookmarkViewModel.swift in Sources */,
 				ADC3B8BB2B08CF9E0076B8D3 /* MyViewController.swift in Sources */,
+				AD238F172B106ABA00F2C48B /* LiveViewModel.swift in Sources */,
 				68CA31402AAA357100A744AF /* HomeViewController.swift in Sources */,
 				ADC3B8BD2B08D2520076B8D3 /* BookmarkViewController.swift in Sources */,
 			);

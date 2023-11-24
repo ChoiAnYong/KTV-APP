@@ -9,6 +9,8 @@ import UIKit
 
 class VideoViewController: UIViewController {
     
+    private let chattingLandscapeConstraint: CGFloat = -500
+
     // MARK: - 제어패널
     @IBOutlet weak var playButton: UIButton!
     
@@ -32,6 +34,12 @@ class VideoViewController: UIViewController {
     @IBOutlet var playerViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var seekbar: SeekbarView!
     @IBOutlet weak var landscapePlayTimeLabel: UILabel!
+    @IBOutlet weak var chattingView: ChattingView!
+    
+ 
+    @IBOutlet weak var chattingViewBottomConstraint: NSLayoutConstraint!
+    var isLiveMode: Bool = false
+    
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MMdd"
@@ -70,16 +78,30 @@ class VideoViewController: UIViewController {
         
         self.playerView.delegate = self
         self.seekbar.delegate = self
+        self.chattingView.delegate = self
         self.channelThumbnailImageView.layer.cornerRadius = 14
         self.setupRecommendTableView()
         self.bindViewModel()
         self.viewModel.request()
+        self.chattingView.isHidden = !self.isLiveMode
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
         self.switchControlPannel(size: size)
         self.playerViewBottomConstraint.isActive = self.isLandscape(size: size)
+        
+        self.chattingView.textField.resignFirstResponder()
+        if self.isLandscape(size: size) {
+            self.chattingViewBottomConstraint.constant = self.chattingLandscapeConstraint
+        } else {
+            self.chattingViewBottomConstraint.constant = 0
+        }
+        
+        coordinator.animate { _ in
+            self.chattingView.collectionView.collectionViewLayout.invalidateLayout()
+        }
+        
         super.viewWillTransition(to: size, with: coordinator)
     }
     
@@ -107,6 +129,9 @@ class VideoViewController: UIViewController {
     }
     
     @IBAction func commentDidTap(_ sender: Any) {
+        if self.isLiveMode {
+            self.chattingView.isHidden = false
+        }
     }
 }
 
@@ -213,6 +238,13 @@ extension VideoViewController: PlayerViewDelegate {
 extension  VideoViewController: SeekbarViewDelegate {
     func seekbar(_ seekbar: SeekbarView, seekToPercent percent: Double) {
         self.playerView.seek(to: percent)
+    }
+}
+
+extension VideoViewController: ChattingViewDelegate {
+    func liveChattingViewCloseDidTap(_ chattingView: ChattingView) {
+//        self.setEditing(false, animated: true) 여기서 채팅 종료 버튼 클릭시 키보드 닫는법
+        self.chattingView.isHidden = true
     }
 }
 

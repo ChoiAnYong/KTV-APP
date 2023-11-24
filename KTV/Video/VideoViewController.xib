@@ -13,6 +13,8 @@
             <connections>
                 <outlet property="channelNameLabel" destination="uly-Hs-DP0" id="6hS-dg-lyW"/>
                 <outlet property="channelThumbnailImageView" destination="4OP-Cr-yrA" id="AKU-gG-JMn"/>
+                <outlet property="chattingView" destination="Ue5-7Q-4Co" id="jQP-c9-KCo"/>
+                <outlet property="chattingViewBottomConstraint" destination="0dr-Wg-oZC" id="iiD-RY-pn4"/>
                 <outlet property="favoriteButton" destination="ipu-P8-IuG" id="2Yv-mK-yqp"/>
                 <outlet property="landscapeControlPannel" destination="5bn-fs-wxW" id="9bf-ji-cA7"/>
                 <outlet property="landscapePlayButton" destination="tZM-DA-sin" id="04l-6d-OBw"/>
@@ -473,16 +475,105 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="oHk-qh-UyF"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="Yzt-zZ-I0f"/>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ue5-7Q-4Co" customClass="ChattingView" customModule="KTV" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="280" width="393" height="572"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41m-O0-9uj">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="67"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라이브 채팅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Dn-GI-yO8">
+                                    <rect key="frame" x="30" y="23" width="78" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <color key="textColor" name="main-wh"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAo-zD-MY4">
+                                    <rect key="frame" x="323" y="13.666666666666686" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="9Iq-VQ-g8k"/>
+                                        <constraint firstAttribute="height" constant="40" id="kpw-dP-WuD"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="small_close"/>
+                                    <connections>
+                                        <action selector="closeDidTap:" destination="Ue5-7Q-4Co" eventType="touchUpInside" id="0z2-eE-xNk"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="4Dn-GI-yO8" firstAttribute="leading" secondItem="41m-O0-9uj" secondAttribute="leading" constant="30" id="0vh-Am-oqI"/>
+                                <constraint firstAttribute="height" constant="67" id="3eB-KA-23J"/>
+                                <constraint firstItem="4Dn-GI-yO8" firstAttribute="centerY" secondItem="41m-O0-9uj" secondAttribute="centerY" id="YE9-VQ-PzB"/>
+                                <constraint firstAttribute="trailing" secondItem="nAo-zD-MY4" secondAttribute="trailing" constant="30" id="qY8-Ck-K9w"/>
+                                <constraint firstItem="nAo-zD-MY4" firstAttribute="centerY" secondItem="41m-O0-9uj" secondAttribute="centerY" id="vc2-1K-6eI"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMa-6Y-m3n">
+                            <rect key="frame" x="0.0" y="458" width="393" height="80"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1C6-jI-Ol8">
+                                    <rect key="frame" x="25" y="7" width="343" height="34"/>
+                                    <color key="backgroundColor" name="chat-bg"/>
+                                    <color key="textColor" name="chat-text"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="1C6-jI-Ol8" secondAttribute="trailing" constant="25" id="Ten-Eb-2q6"/>
+                                <constraint firstItem="1C6-jI-Ol8" firstAttribute="leading" secondItem="ZMa-6Y-m3n" secondAttribute="leading" constant="25" id="cpy-Dx-geQ"/>
+                                <constraint firstItem="1C6-jI-Ol8" firstAttribute="top" secondItem="ZMa-6Y-m3n" secondAttribute="top" constant="7" id="pRj-lh-XbV"/>
+                                <constraint firstAttribute="height" constant="80" id="tBV-hL-tZ6"/>
+                            </constraints>
+                        </view>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Hrs-v5-41C">
+                            <rect key="frame" x="0.0" y="67" width="393" height="391"/>
+                            <color key="backgroundColor" name="bk-origin"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="w3l-Ky-teQ">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="Dkm-Z5-I0Y"/>
+                    <keyboardLayoutGuide key="keyboard" id="pGR-Ds-2hw"/>
+                    <color key="backgroundColor" name="bk-origin"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="ZMa-6Y-m3n" firstAttribute="leading" secondItem="Ue5-7Q-4Co" secondAttribute="leading" id="9XH-j7-Wza"/>
+                        <constraint firstItem="Hrs-v5-41C" firstAttribute="leading" secondItem="Ue5-7Q-4Co" secondAttribute="leading" id="FRQ-D6-v3I"/>
+                        <constraint firstItem="41m-O0-9uj" firstAttribute="leading" secondItem="Ue5-7Q-4Co" secondAttribute="leading" id="KQB-M7-ZWe"/>
+                        <constraint firstAttribute="trailing" secondItem="ZMa-6Y-m3n" secondAttribute="trailing" id="PpH-Dv-R1U"/>
+                        <constraint firstItem="41m-O0-9uj" firstAttribute="top" secondItem="Ue5-7Q-4Co" secondAttribute="top" id="SnE-hf-kDv"/>
+                        <constraint firstAttribute="trailing" secondItem="41m-O0-9uj" secondAttribute="trailing" id="WGT-cm-emv"/>
+                        <constraint firstItem="pGR-Ds-2hw" firstAttribute="top" secondItem="ZMa-6Y-m3n" secondAttribute="bottom" priority="750" id="Xkr-ud-Z2c"/>
+                        <constraint firstItem="Dkm-Z5-I0Y" firstAttribute="bottom" secondItem="ZMa-6Y-m3n" secondAttribute="bottom" priority="700" id="cvt-Jn-pc5"/>
+                        <constraint firstAttribute="trailing" secondItem="Hrs-v5-41C" secondAttribute="trailing" id="eiK-5l-PZa"/>
+                        <constraint firstItem="ZMa-6Y-m3n" firstAttribute="top" secondItem="Hrs-v5-41C" secondAttribute="bottom" id="esa-9u-BLX"/>
+                        <constraint firstItem="Hrs-v5-41C" firstAttribute="top" secondItem="41m-O0-9uj" secondAttribute="bottom" id="tKn-dg-ciS"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="collectionView" destination="Hrs-v5-41C" id="e9M-jy-U6o"/>
+                        <outlet property="textField" destination="1C6-jI-Ol8" id="I6l-0z-xSX"/>
+                        <outletCollection property="gestureRecognizers" destination="UKQ-dF-9eG" appends="YES" id="qCt-XP-JG3"/>
+                    </connections>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="bk-origin"/>
             <gestureRecognizers/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="Ue5-7Q-4Co" secondAttribute="bottom" id="0dr-Wg-oZC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Rtx-F0-zjh" secondAttribute="trailing" id="0iX-kh-Skb"/>
                 <constraint firstItem="jXI-Rg-Of1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1u4-dS-Duk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ue5-7Q-4Co" secondAttribute="trailing" id="7Lw-kr-HHp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jXI-Rg-Of1" secondAttribute="trailing" id="CQb-Gg-u95"/>
+                <constraint firstItem="Ue5-7Q-4Co" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FOc-sg-Pyq"/>
                 <constraint firstAttribute="bottom" secondItem="jXI-Rg-Of1" secondAttribute="bottom" id="GZl-57-5cz"/>
                 <constraint firstAttribute="bottom" secondItem="Rtx-F0-zjh" secondAttribute="bottom" id="JlO-aE-UXx"/>
+                <constraint firstItem="Ue5-7Q-4Co" firstAttribute="top" secondItem="jXI-Rg-Of1" secondAttribute="bottom" id="Urp-Fs-tJY"/>
                 <constraint firstItem="jXI-Rg-Of1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bt6-c5-uWE"/>
                 <constraint firstItem="Rtx-F0-zjh" firstAttribute="top" secondItem="jXI-Rg-Of1" secondAttribute="bottom" id="ccf-7g-Oyz"/>
                 <constraint firstItem="Rtx-F0-zjh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wFv-9l-RQH"/>
@@ -497,6 +588,11 @@
         <tapGestureRecognizer id="vu1-cE-juf">
             <connections>
                 <action selector="toggleControlPannel:" destination="-1" id="YNU-lw-XNR"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="UKQ-dF-9eG">
+            <connections>
+                <action selector="dismissKeyboard:" destination="Ue5-7Q-4Co" id="VAg-gy-P0w"/>
             </connections>
         </tapGestureRecognizer>
     </objects>
@@ -521,6 +617,12 @@
         </namedColor>
         <namedColor name="bk-origin">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="chat-bg">
+            <color red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="chat-text">
+            <color red="0.59607843137254901" green="0.59607843137254901" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="d-text-deep">
             <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
