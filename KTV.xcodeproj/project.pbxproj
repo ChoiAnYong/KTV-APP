@@ -61,6 +61,7 @@
 		AD238F242B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD238F202B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.xib */; };
 		AD238F252B107A5A00F2C48B /* LiveChattingMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F212B107A5A00F2C48B /* LiveChattingMessageCollectionViewCell.swift */; };
 		AD238F262B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F222B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.swift */; };
+		AD238F282B11D16500F2C48B /* VideoViewControllerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD238F272B11D16500F2C48B /* VideoViewControllerContainer.swift */; };
 		ADC3B8B22B08A09F0076B8D3 /* live.json in Resources */ = {isa = PBXBuildFile; fileRef = ADC3B8AD2B08A09F0076B8D3 /* live.json */; };
 		ADC3B8B32B08A09F0076B8D3 /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = ADC3B8AE2B08A09F0076B8D3 /* video.json */; };
 		ADC3B8B42B08A09F0076B8D3 /* favorite.json in Resources */ = {isa = PBXBuildFile; fileRef = ADC3B8AF2B08A09F0076B8D3 /* favorite.json */; };
@@ -164,6 +165,7 @@
 		AD238F202B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveChattingMyMessageCollectionViewCell.xib; sourceTree = "<group>"; };
 		AD238F212B107A5A00F2C48B /* LiveChattingMessageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveChattingMessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		AD238F222B107A5A00F2C48B /* LiveChattingMyMessageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveChattingMyMessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		AD238F272B11D16500F2C48B /* VideoViewControllerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewControllerContainer.swift; sourceTree = "<group>"; };
 		ADC3B8AD2B08A09F0076B8D3 /* live.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = live.json; sourceTree = "<group>"; };
 		ADC3B8AE2B08A09F0076B8D3 /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
 		ADC3B8AF2B08A09F0076B8D3 /* favorite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favorite.json; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				95E70CA02AA8B93D007BAD7B /* LaunchScreen.storyboard */,
 				95E70CA32AA8B93D007BAD7B /* Info.plist */,
 				ADC3B8CC2B08DBBB0076B8D3 /* NavigationController.swift */,
+				AD238F272B11D16500F2C48B /* VideoViewControllerContainer.swift */,
 			);
 			path = KTV;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				684920CE2AB1FD8C00E5202E /* TabBarController.swift in Sources */,
 				AD20D47E2B0760A1000CADFB /* DataLoader.swift in Sources */,
 				ADC3B8C22B08D4FB0076B8D3 /* BookmarkCell.swift in Sources */,
+				AD238F282B11D16500F2C48B /* VideoViewControllerContainer.swift in Sources */,
 				95E70C962AA8B93B007BAD7B /* AppDelegate.swift in Sources */,
 				AD238F0C2B0F946400F2C48B /* DateComponentsFormatterExtension.swift in Sources */,
 				AD20D4A32B07C34D000CADFB /* HomeRecentWatchContainerCell.swift in Sources */,

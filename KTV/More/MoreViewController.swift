@@ -16,12 +16,14 @@ class MoreViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
          
         self.modalPresentationStyle = .overFullScreen
+        self.modalTransitionStyle = .crossDissolve
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
         self.modalPresentationStyle = .overFullScreen
+        self.modalTransitionStyle = .crossDissolve
     }
     
     override func viewDidLoad() {
@@ -54,7 +56,7 @@ class MoreViewController: UIViewController {
     }
     
     @IBAction func closeDidTap(_ sender: Any) {
-        self.dismiss(animated: false)//modal로 띄운 뷰에 대한 닫기를 가능하게 함(animated를 true로 하면 창이 올라오는 모션이 나온다.
+        self.dismiss(animated: true)//modal로 띄운 뷰에 대한 닫기를 가능하게 함(animated를 true로 하면 창이 올라오는 모션이 나온다.
     }
     
     private func setupConerRadius() {
